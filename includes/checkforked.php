@@ -51,9 +51,9 @@ echo "\t\t\tGoing to check for forked status now...\n";
           }
 
           // Perform snapshot restore
-          passthru("cd $pathtoapp && forever stop app.js");
+          passthru("cd $pathtoapp && bash lisk.sh stop");
           passthru("cd $snapshotDir && echo y | ./shift-snapshot.sh restore");
-          passthru("cd $pathtoapp && forever start app.js");
+          passthru("cd $pathtoapp && bash lisk.sh start");
 
           // Reset counters
           echo "\t\t\tFinally, I will reset the counter for you...\n";
