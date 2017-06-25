@@ -1,6 +1,7 @@
 <?php
 	/**
 	 * @author Jan
+	 * @modified Gregorst
 	 * @link https://github.com/lepetitjan/shift-checker
 	 * @license https://github.com/lepetitjan/shift-checker/blob/master/LICENSE
 	 */
@@ -14,26 +15,27 @@ __________________________ */
 
 // You may leave the settings below as they are...
 	$date		= date("Y-m-d H:i:s");			// Current date
-	$pathtoapp	= $homeDir."shift/";			// Full path to your shift installation	
+	$pathtoapp	= $homeDir."lisk-main/";			// Full path to your shift installation	
 	$baseDir	= dirname(__FILE__)."/";		// Folder which contains THIS file
 	$lockfile	= $baseDir."checkdelegate.lock";	// Name of our lock file
 	$database	= $baseDir."check_fork.sqlite3";	// Database name to use
 	$table 		= "forks";				// Table name to use
 	$msg 		= "\"cause\":3";			// Message that is printed when forked
-	$shiftlog 	= $pathtoapp."logs/shift.log";		// Needs to be a FULL path, so not ~/shift
+	$shiftlog 	= $pathtoapp."logs/lisk.log";		// Needs to be a FULL path, so not ~/shift
 	$linestoread	= 30;					// How many lines to read from the end of $shiftlog
 	$max_count 	= 3;					// How may times $msg may occur
 	$okayMsg 	= "√";					// 'Okay' message from shift_manager.bash
 
 // Consensus settings
+/// Please use a valid ssl certificate and a domain, not ip
 	$consensusEnable= false;                                // Enable consensus check? Be sure to check $nodes first..
 	$master         = true;                                 // Is this your master node? True/False
-	$masternode     = "http://127.0.0.1";                   // Master node
-	$masterport     = 9305;                                 // Master port
-	$slavenode      = "http://testnode1.shiftnrg.org";      // Slave node
-	$slaveport      = 9305;                                 // Slave port
+	$masternode     = "https://lisk1.yourdomain.org";                   // Master node
+	$masterport     = 2443;                                 // Master port
+	$slavenode      = "https://lisk2.yourdomain.org";      // Slave node
+	$slaveport      = 2443;                                 // Slave port
 	$threshold      = 50;                                   // Percentage of consensus threshold
-	$apiHost        = "https://wallet.shiftnrg.org";	// Used to calculate $publicKey by $secret. Use $masternode or $slavenode
+	$apiHost        = "https://login.lisk.io/";	// Used to calculate $publicKey by $secret. Use $masternode or $slavenode
 	$secret         = array("");                            // Add your secrets here. If you want to forge multiple, add extra to the array. 
 
 // Snapshot settings
@@ -47,6 +49,7 @@ __________________________ */
 	$logsize 	= 5242880;				// Max file size, default is 5 MB
 
 // Telegram Bot
+/// real time monitoring
 	$telegramId 	= ""; 					// Your Telegram ID
 	$telegramApiKey = ""; 					// Your Telegram API key 
 	$telegramEnable = false;				// Change to true to enable Telegram Bot
