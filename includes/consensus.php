@@ -76,9 +76,9 @@ echo "[ CONSENSUS ]\n";
 
             // Restart Shift
             echo "\t\t\tStopping all forever processes...\n";
-              passthru("forever stopall");
+              passthru("cd $pathtoapp && bash lisk.sh stop");
             echo "\t\t\tStarting Shift forever proces...\n";
-              passthru("cd $pathtoapp && forever start app.js");
+              passthru("cd $pathtoapp && bash lisk.sh start");
               
           }else{
             // All is fine. Do nothing..
@@ -160,9 +160,9 @@ echo "[ CONSENSUS ]\n";
 
             // Restart Shift
             echo "\t\t\tStopping all forever processes...\n";
-              passthru("forever stopall");
+              passthru("cd $pathtoapp && bash  lisk.sh stop");
             echo "\t\t\tStarting Shift forever proces...\n";
-              passthru("cd $pathtoapp && forever start app.js");
+              passthru("cd $pathtoapp && bash  lisk.sh start");
           }else{
             echo "\t\t\tConsensus on slave is sufficient enough to switch to..\n";
             
@@ -223,9 +223,9 @@ echo "[ CONSENSUS ]\n";
 
               // Restart Shift
               echo "\t\t\tStopping all forever processes...\n";
-                passthru("forever stopall");
+                passthru("cd $pathtoapp && bash  lisk.sh stop");
               echo "\t\t\tStarting Shift forever proces...\n";
-                passthru("cd $pathtoapp && forever start app.js");
+                passthru("cd $pathtoapp && bash  lisk.sh start");
 
             }else{
               // Consensus is sufficient on master. Enabling forging to master
