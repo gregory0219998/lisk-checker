@@ -5,7 +5,7 @@ echo "\t\t\tLet's check if our delegate is still running...\n";
 
 // Check status with shift_manager.bash. Use PHP's ob_ function to create an output buffer
 	ob_start();
-  $check_status = passthru("cd $pathtoapp && bash shift_manager.bash status | cut -z -b1-3");
+  $check_status = passthru("cd $pathtoapp && bash lisk.sh status | cut -z -b1-3");
 	$check_output = ob_get_contents();
 	ob_end_clean();
 
@@ -20,9 +20,9 @@ echo "\t\t\tLet's check if our delegate is still running...\n";
    	}
    	
     echo "\t\t\tStopping all forever processes...\n";
-   		passthru("forever stopall >/dev/null");
+   		passthru("cd $pathtoapp && bash lisk.sh stop >/dev/null");
    	echo "\t\t\tStarting Shift forever proces...\n";
-   		passthru("cd $pathtoapp && forever start app.js >/dev/null");
+   		passthru("cd $pathtoapp && bash lisk.sh start >/dev/null");
    
   }else{
   	echo "\t\t\tDelegate is still running...\n";
