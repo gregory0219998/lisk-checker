@@ -28,8 +28,8 @@ echo "\t\t\tGoing to check for forked status now...\n";
       	
       	}
 
-// Tail shift.log
-	$last = tailCustom($shiftlog, $linestoread);
+// Tail lisk.log
+	$last = tailCustom($lisklog, $linestoread);
 
 // Count how many times the fork message appears in the tail
 	$count = substr_count($last, $msg);
@@ -42,7 +42,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
 // If counter + current count is greater than $max_count, take action...
     if (($counter + $count) >= $max_count) {
 
-        // If shift-snapshot directory exists..
+        // If lisk-snapshot directory exists..
         if(file_exists($snapshotDir)){
           echo "\t\t\tHit max_count. I am going to restore from a snapshot.\n";
           if($telegramEnable === true){
@@ -52,7 +52,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
 
           // Perform snapshot restore
           passthru("cd $pathtoapp && bash lisk.sh stop");
-          passthru("cd $snapshotDir && echo y | ./shift-snapshot.sh restore");
+          passthru("cd $snapshotDir && echo y | ./lisk-snapshot.sh restore");
           passthru("cd $pathtoapp && bash lisk.sh start");
 
           // Reset counters
@@ -62,7 +62,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
         }else{
           echo "\t\t\tWe hit max_count and want to restore from snapshot.\n
                 \t\t\tHowever, path to snapshot directory ($snapshotDir) does not seem to exist.\n
-                \t\t\tDid you install shift-snapshot?\n";
+                \t\t\tDid you install lisk-snapshot?\n";
         }
 
 // If counter + current count is not greater than $max_count, add current count to our database...
@@ -84,10 +84,10 @@ echo "\t\t\tGoing to check for forked status now...\n";
     		echo "\t\t\tIt's safe to create a daily snapshot and the setting is enabled.\n";
     		echo "\t\t\tLet's check if a snapshot was already created today...\n";
     		
-    		// Check if path to shift-snapshot exists..
+    		// Check if path to lisk-snapshot exists..
         if(file_exists($snapshotDir)){
           
-          $snapshots = glob($snapshotDir.'snapshot/shift_db'.date("d-m-Y").'*.snapshot.tar');
+          $snapshots = glob($snapshotDir.'snapshot/lisk_db'.date("d-m-Y").'*.snapshot.tar');
           if (!empty($snapshots)) {
         
             echo "\t\t\tA snapshot for today already exists:\n";
@@ -112,7 +112,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
             echo "\t\t\tNo snapshot exists for today, I will create one for you now!\n";
               
             ob_start();
-            $create = passthru("cd $snapshotDir && ./shift-snapshot.sh create");
+            $create = passthru("cd $snapshotDir && ./lisk-snapshot.sh create");
             $check_createoutput = ob_get_contents();
             ob_end_clean();
 
@@ -130,9 +130,9 @@ echo "\t\t\tGoing to check for forked status now...\n";
 
           }
         }else{
-          // Path to shift-snapshot does not exist..
-          echo "\t\t\tYou have shift-snapshot enabled, but the path to shift-snapshot does not seem to exist.\n
-                \t\t\tDid you install shift-snapshot?\n";
+          // Path to lisk-snapshot does not exist..
+          echo "\t\t\tYou have lisk-snapshot enabled, but the path to lisk-snapshot does not seem to exist.\n
+                \t\t\tDid you install lisk-snapshot?\n";
         }
 
     	}
