@@ -94,7 +94,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
               echo "\t\t\t".$snapshots[0]."\n";
             
             echo "\t\t\tGoing to remove snapshots older than $max_snapshots days...\n";
-              $files = glob($snapshotDir.'snapshot/shift_db*.snapshot.tar');
+              $files = glob($snapshotDir.'snapshot/lisk_db*.snapshot.tar');
               foreach($files as $file){
                 if(is_file($file)){
                     if(time() - filemtime($file) >= 60 * 60 * 24 * $max_snapshots){
