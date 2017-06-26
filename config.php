@@ -9,20 +9,20 @@
 /*  GENERAL CONFIG
 __________________________ */
 
-// You should have installed Shift-Checker as normal user, so the line below should work by default.
+// You should have installed Lisk-Checker as normal user, so the line below should work by default.
 // However, if you installed as root (please don't..) change the path below to $homeDir = "/root/";
     $homeDir        = "/home/".get_current_user()."/";
 
 // You may leave the settings below as they are...
 	$date		= date("Y-m-d H:i:s");			// Current date
-	$pathtoapp	= $homeDir."lisk-main/";		// Full path to your shift installation	
+	$pathtoapp	= $homeDir."lisk-main/";		// Full path to your lisk installation	
 	$baseDir	= dirname(__FILE__)."/";		// Folder which contains THIS file
 	$lockfile	= $baseDir."checkdelegate.lock";	// Name of our lock file
 	$database	= $baseDir."check_fork.sqlite3";	// Database name to use
 	$table 		= "forks";				// Table name to use
 	$msg 		= "\"cause\":3";			// Message that is printed when forked
-	$shiftlog 	= $pathtoapp."logs/lisk.log";		// Needs to be a FULL path, so not ~/lisk-main
-	$linestoread	= 30;					// How many lines to read from the end of $shiftlog
+	$lisklog 	= $pathtoapp."logs/lisk.log";		// Needs to be a FULL path, so not ~/lisk-main
+	$linestoread	= 30;					// How many lines to read from the end of $lisklog
 	$max_count 	= 3;					// How may times $msg may occur
 	$okayMsg 	= "√";					// 'Okay' message from bash lisk.sh 
 
@@ -39,7 +39,7 @@ __________________________ */
 	$secret         = array("");                            // Add your secrets here. If you want to forge multiple, add extra to the array. 
 
 // Snapshot settings
-	$snapshotDir	= $homeDir."lisk-snapshot/";		// Base folder of shift-snapshot
+	$snapshotDir	= $homeDir."lisk-snapshot/";		// Base folder of lisk-snapshot
 	$createsnapshot	= true;					// Do you want to create daily snapshots?
 	$max_snapshots	= 3;					// How many snapshots to preserve? (in days)
 
