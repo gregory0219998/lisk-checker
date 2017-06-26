@@ -64,9 +64,9 @@ echo "[ CONSENSUS ]\n";
           }
           echo "\t\t\tConsensus slave: $consensusSlave %\n";
           
-          // If consensus on the slave is below threshold as well, send a telegram message and restart Shift!
+          // If consensus on the slave is below threshold as well, send a telegram message and restart Lisk!
           if($consensusSlave <= $threshold){
-            echo "\t\t\tThreshold on slave node reached! Telegram: No healthy server online. Going to restart Shift for you..\n";
+            echo "\t\t\tThreshold on slave node reached! Telegram: No healthy server online. Going to restart Lisk for you..\n";
             
             // Send Telegram
             if($telegramEnable === true){
@@ -75,9 +75,9 @@ echo "[ CONSENSUS ]\n";
             }
 
             // Restart Shift
-            echo "\t\t\tStopping all forever processes...\n";
+            echo "\t\t\tStopping all  processes...\n";
               passthru("cd $pathtoapp && bash lisk.sh stop");
-            echo "\t\t\tStarting Shift forever proces...\n";
+            echo "\t\t\tStarting Lisk  proces...\n";
               passthru("cd $pathtoapp && bash lisk.sh start");
               
           }else{
@@ -148,9 +148,9 @@ echo "[ CONSENSUS ]\n";
           }
           echo "\t\t\tConsensus slave: $consensusSlave %\n";
           
-          // If consensus on the slave is below threshold as well, send a telegram message and restart Shift!
+          // If consensus on the slave is below threshold as well, send a telegram message and restart Lisk!
           if($consensusSlave <= $threshold){
-            echo "\t\t\tThreshold on slave node reached! Telegram: No healthy server online. Going to restart Shift for you..\n";
+            echo "\t\t\tThreshold on slave node reached! Telegram: No healthy server online. Going to restart Lisk for you..\n";
             
             // Send Telegram
             if($telegramEnable === true){
@@ -158,11 +158,11 @@ echo "[ CONSENSUS ]\n";
               passthru("curl -s -d 'chat_id=$telegramId&text=$Tmsg' $telegramSendMessage >/dev/null");
             }
 
-            // Restart Shift
-            echo "\t\t\tStopping all forever processes...\n";
-              passthru("cd $pathtoapp && bash  lisk.sh stop");
-            echo "\t\t\tStarting Shift forever proces...\n";
-              passthru("cd $pathtoapp && bash  lisk.sh start");
+            // Restart Lisk
+            echo "\t\t\tStopping all Lisk processes...\n";
+              passthru("cd $pathtoapp && bash lisk.sh stop");
+            echo "\t\t\tStarting Lisk proces...\n";
+              passthru("cd $pathtoapp && bash lisk.sh start");
           }else{
             echo "\t\t\tConsensus on slave is sufficient enough to switch to..\n";
             
@@ -221,11 +221,11 @@ echo "[ CONSENSUS ]\n";
             if($consensusMaster <= $threshold){
               echo "\t\t\tThreshold on master node reached as well! Restarting Shift..\n";
 
-              // Restart Shift
-              echo "\t\t\tStopping all forever processes...\n";
+              // Restart Lisk
+              echo "\t\t\tStopping all Lisk related processes...\n";
                 passthru("cd $pathtoapp && bash  lisk.sh stop");
-              echo "\t\t\tStarting Shift forever proces...\n";
-                passthru("cd $pathtoapp && bash  lisk.sh start");
+              echo "\t\t\tStarting Lisk process...\n";
+                passthru("cd $pathtoapp && bash lisk.sh start");
 
             }else{
               // Consensus is sufficient on master. Enabling forging to master
