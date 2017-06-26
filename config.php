@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * @author Jan
+	 * @author original script Jan
 	 * @modified Gregorst
-	 * @link https://github.com/lepetitjan/shift-checker
+	 * @link original script https://github.com/lepetitjan/shift-checker
 	 * @license https://github.com/lepetitjan/shift-checker/blob/master/LICENSE
 	 */
 
@@ -46,7 +46,7 @@ __________________________ */
 // Log file rotation
 	$logfile 	= $baseDir."logs/checkdelegate.log";	// The location of your log file (see section crontab on Github)
 	$max_logfiles	= 3;					// How many log files to preserve? (in days)  
-	$logsize 	= 5242880;				// Max file size, default is 5 MB
+	$logsize 	= 524280;				// Max file size, default is 5 MB
 
 // Telegram Bot
 /// real time monitoring
