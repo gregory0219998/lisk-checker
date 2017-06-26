@@ -70,11 +70,11 @@ echo "[ CONSENSUS ]\n";
             
             // Send Telegram
             if($telegramEnable === true){
-              $Tmsg = gethostname().": No healthy server online. Going to restart SHIFT for you..";
+              $Tmsg = gethostname().": No healthy server online. Going to restart LISK for you..";
               passthru("curl -s -d 'chat_id=$telegramId&text=$Tmsg' $telegramSendMessage >/dev/null");
             }
 
-            // Restart Shift
+            // Restart Lisk
             echo "\t\t\tStopping all  processes...\n";
               passthru("cd $pathtoapp && bash lisk.sh stop");
             echo "\t\t\tStarting Lisk  proces...\n";
@@ -154,7 +154,7 @@ echo "[ CONSENSUS ]\n";
             
             // Send Telegram
             if($telegramEnable === true){
-              $Tmsg = gethostname().": No healthy server online. Going to restart SHIFT for you..";
+              $Tmsg = gethostname().": No healthy server online. Going to restart Lisk for you..";
               passthru("curl -s -d 'chat_id=$telegramId&text=$Tmsg' $telegramSendMessage >/dev/null");
             }
 
@@ -219,7 +219,7 @@ echo "[ CONSENSUS ]\n";
             
             // If consensus is the same as or lower than the set threshold..
             if($consensusMaster <= $threshold){
-              echo "\t\t\tThreshold on master node reached as well! Restarting Shift..\n";
+              echo "\t\t\tThreshold on master node reached as well! Restarting Lisk..\n";
 
               // Restart Lisk
               echo "\t\t\tStopping all Lisk related processes...\n";
