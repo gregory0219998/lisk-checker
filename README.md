@@ -13,7 +13,7 @@ sudo apt install php php-cli php-mbstring php-sqlite3
 * lisk-snapshot.sh: https://github.com/gregory0219998/lisk-snapshot
 
 This script checks the status of your Lisk Delegate by using PHP.<br>
-Feel free to rewrite in Python or Bash. 
+ 
  
 This script will also check whether your node has forked or not.<br>
 When forked, it will stop Lisk, restore to previous snapshot, and start Lisk again.
@@ -48,12 +48,12 @@ Be sure to run this script after:
 
 
 ## Installation
-You can clone this into every directory of your choosing. I usually just clone it into my home folder.
+You can clone this into every directory of your choosing. 
 ```
 git clone https://github.com/gregory0219998/lisk-checker
 ```
 * Change settings inside config.php to match your needs
-* Edit your crontab with the example below
+* Edit your crontab with the example below (crontab -e)
 
 ## Example crontab
 ```
@@ -61,7 +61,7 @@ git clone https://github.com/gregory0219998/lisk-checker
 ```
 
 ## Telegram bot
-Shift-Checker comes with Telegram functionality which will allow shfit-checker to send you a message if anything requires your attention. It's very easy to set up: 
+Lisk-Checker comes with Telegram functionality which will allow shfit-checker to send you a message if anything requires your attention. It's very easy to set up: 
 * Open Telegram and start a conversation with: <b>userinfobot</b>
 * Put your ID inside variable $telegramId. 
 ```
@@ -78,6 +78,7 @@ $telegramApiKey 	= "1122334455:AAEhBOweik6ad9r_QXMENQjcrGbqCr4K-bs";
 ```
 * Edit the telegram toggle (true/false)
 * Start a conversation with your bot (username) to enable communication between you two
+
 
 ## Original creator Contacts 
 * Twitter: [@lepetitjan](https://twitter.com/lepetitjan) 
