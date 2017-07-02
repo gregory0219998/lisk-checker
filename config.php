@@ -39,8 +39,9 @@ __________________________ */
 	$secret         = array("");                            // Add your secrets here. If you want to forge multiple, add extra to the array. 
 
 // Snapshot settings
+// LEAVE IT TO FALSE Function not developed yet
 	$snapshotDir	= $homeDir."lisk-snapshot/";		// Base folder of lisk-snapshot
-	$createsnapshot	= true;					// Do you want to create daily snapshots?
+	$createsnapshot	= false;					// Do you want to create daily snapshots?
 	$max_snapshots	= 3;					// How many snapshots to preserve? (in days)
 
 // Log file rotation
