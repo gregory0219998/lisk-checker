@@ -43,8 +43,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
     if (($counter + $count) >= $max_count) {
 
         // If lisk-snapshot directory exists..
-        if(file_exists($snapshotDir)){
-          echo "\t\t\tHit max_count. I am going to restore from a snapshot.\n";
+       
           if($telegramEnable === true){
             $Tmsg = "Hit max_count on ".gethostname().". I am going to restore from a snapshot.";
             passthru("curl -s -d 'chat_id=$telegramId&text=$Tmsg' $telegramSendMessage >/dev/null");
@@ -52,17 +51,13 @@ echo "\t\t\tGoing to check for forked status now...\n";
 
           // Perform snapshot restore
           passthru("cd $pathtoapp && bash lisk.sh stop");
-          passthru("cd $snapshotDir && echo y | ./lisk-snapshot.sh restore");
+          passthru("cd $pathtoapp && bash lisk.sh rebuild -u https://snapshot.lisknode.io/");
           passthru("cd $pathtoapp && bash lisk.sh start");
 
           // Reset counters
           echo "\t\t\tFinally, I will reset the counter for you...\n";
           $query = "UPDATE $table SET counter='0', time=time()";
           $db->exec($query) or die("[ FORKING ] Unable to set counter to 0!");
-        }else{
-          echo "\t\t\tWe hit max_count and want to restore from snapshot.\n
-                \t\t\tHowever, path to snapshot directory ($snapshotDir) does not seem to exist.\n
-                \t\t\tDid you install lisk-snapshot?\n";
         }
 
 // If counter + current count is not greater than $max_count, add current count to our database...
