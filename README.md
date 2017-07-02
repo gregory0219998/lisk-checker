@@ -10,16 +10,16 @@ Be sure that your php.ini allows passthru(). It's default that it does though, s
 ```
 sudo apt install php php-cli php-mbstring php-sqlite3
 ```
-* lisk-snapshot.sh: https://github.com/gregory0219998/lisk-snapshot
+
 
 This script checks the status of your Lisk Delegate by using PHP.<br>
  
  
 This script will also check whether your node has forked or not.<br>
-When forked, it will stop Lisk, restore to previous snapshot, and start Lisk again.
+When forked, it will stop Lisk, restore to a downloaded snapshot, and start Lisk again.
   
 This script will also check your consensus and switch forging to your backup node.<br>
-When both nodes have a bad consensus, it will restart Shift and let you know by sending a Telegram message.
+When both nodes have a bad consensus, it will restart Lisk and let you know by sending a Telegram message.
 
 <b>IMPORTANT TO MENTION</b>
 If you want to use the consensus controller, you need to add your secret(s) to config.php and remove them from your Lisk config.json, also use domain with ssl with valid certificate. 
@@ -41,9 +41,8 @@ There are some echo lines in this file.<br>
 When you redirect output to a log file in your crontab, these lines will show up. <br>
 See section Example crontab for more information.
 
-Be sure to run this script after:
-* You have installed lisk-snapshot
-* You have created a snapshot with lisk-snapshot
+
+
 
 
 
