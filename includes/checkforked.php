@@ -61,7 +61,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
         }
 
 // If counter + current count is not greater than $max_count, add current count to our database...
-    } else {
+     else {
 
 	    $query = "UPDATE $table SET counter=counter+$count, time=time()";
     	$db->exec($query) or die("[ FORKING ] Unable to plus the counter!");
