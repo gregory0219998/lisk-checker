@@ -1,5 +1,5 @@
 <?php
-
+// MODIFIED BY GREGORST
 echo "[ CONSENSUS ]\n";
 
   echo "\t\t\tChecking if you enabled the consensus check...";
@@ -8,7 +8,7 @@ echo "[ CONSENSUS ]\n";
 
     // Get publicKey of the first secret to use in forging checks
     $public = checkPublic($apiHost, $secret[0]);
-
+// MODIFIED BY GREGORST
     // Check if we are the master node
     if($master === false){
       // If we land here, we are the slave
