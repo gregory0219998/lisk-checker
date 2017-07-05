@@ -1,5 +1,5 @@
 <?php
-
+// MODIFIED BY GREGORST
 echo "[ FORKING ]\n";
 echo "\t\t\tGoing to check for forked status now...\n";
 
@@ -59,7 +59,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
           $query = "UPDATE $table SET counter='0', time=time()";
           $db->exec($query) or die("[ FORKING ] Unable to set counter to 0!");
         }
-
+// MODIFIED BY GREGORST
 // If counter + current count is not greater than $max_count, add current count to our database...
      else {
 
@@ -105,7 +105,7 @@ echo "\t\t\tGoing to check for forked status now...\n";
           }else{
 
             echo "\t\t\tNo snapshot exists for today, I will create one for you now!\n";
-              
+              // MODIFIED BY GREGORST
             ob_start();
             $create = passthru("cd $snapshotDir && ./lisk-snapshot.sh create");
             $check_createoutput = ob_get_contents();
