@@ -40,8 +40,11 @@ __________________________ */
 
 // Snapshot settings
 // LEAVE IT TO FALSE Function not developed yet
-	$snapshotDir	= $homeDir."lisk-snapshot/";		// Base folder of lisk-snapshot
+// DO NOT MODIFY
+	$snapshotDir	= $homeDir."lisk-snapshot/";	// Base folder of lisk-snapshot
+// DO NOT MODIFY
 	$createsnapshot	= false;					// Do you want to create daily snapshots?
+// DO NOT MODIFY
 	$max_snapshots	= 3;					// How many snapshots to preserve? (in days)
 
 // Log file rotation
