@@ -1,5 +1,5 @@
 <?php
-
+// MODIFIED BY GREGORST
 echo "[ STATUS ]\n";
 echo "\t\t\tLet's check if our delegate is still running...\n";
 
@@ -23,7 +23,7 @@ echo "\t\t\tLet's check if our delegate is still running...\n";
    		passthru("cd $pathtoapp && bash lisk.sh stop >/dev/null");
    	echo "\t\t\tStarting Lisk  proces...\n";
    		passthru("cd $pathtoapp && bash lisk.sh start >/dev/null");
-   
+   // MODIFIED BY GREGORST
   }else{
   	echo "\t\t\tDelegate is still running...\n";
   }
