@@ -52,8 +52,12 @@ You can clone this into every directory of your choosing.
 ```
 git clone https://github.com/gregory0219998/lisk-checker
 ```
+
+To create the encrypted seed modify and run crypt.php
+```php crypt.php```
 * Change settings inside config.php to match your needs
 * Edit your crontab with the example below (crontab -e)
+
 
 ## Example crontab
 ```
