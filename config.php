@@ -52,7 +52,7 @@ __________________________ */
 	$slavenode      = "https://lisk2.yourdomain.org";      // Slave node
 	$slaveport      = 2443;                                 // Slave port
 	$threshold      = 50;                                   // Percentage of consensus threshold
-	$apiHost        = "https://login.lisk.io/";	// Used to calculate $publicKey by $secret. Use $masternode or $slavenode
+	$apiHost        = "$masternode:$masterport";	// Used to calculate $publicKey by $secret. Use $masternode or $slavenode
 	$secret         = array("$decrypted");                            // Add your secrets here. If you want to forge multiple, add extra to the array. 
 
 // Snapshot settings
