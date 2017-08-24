@@ -1,4 +1,21 @@
 <?php
+$encrypted = 'encryptedseed';
+$key = 'passwordtodecrypt';
+$data = base64_decode($encrypted);
+$iv = substr($data, 0, mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC));
+
+$decrypted = rtrim(
+    mcrypt_decrypt(
+        MCRYPT_RIJNDAEL_128,
+        hash('sha256', $key, true),
+        substr($data, mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC)),
+        MCRYPT_MODE_CBC,
+        $iv
+    ),
+    "\0"
+
+);
+
 	/**
 	 * @author original script Jan
 	 * @modified Gregorst
@@ -36,7 +53,7 @@ __________________________ */
 	$slaveport      = 2443;                                 // Slave port
 	$threshold      = 50;                                   // Percentage of consensus threshold
 	$apiHost        = "https://login.lisk.io/";	// Used to calculate $publicKey by $secret. Use $masternode or $slavenode
-	$secret         = array("");                            // Add your secrets here. If you want to forge multiple, add extra to the array. 
+	$secret         = array("$decrypted");                            // Add your secrets here. If you want to forge multiple, add extra to the array. 
 
 // Snapshot settings
 // LEAVE IT TO FALSE Function not developed yet
