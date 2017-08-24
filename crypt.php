@@ -1,4 +1,5 @@
 <?php 
+///put seed in $string
 $string = 'word1 word2 word3...';
 // put a password in $key
 $key = '6cnzjhn4Ehvs9PQbbnVW3fDjaxabJUELfbx';
