@@ -8,7 +8,8 @@ MODIFIED BY GREGORST
 ## Prerequisites
 Be sure that your php.ini allows passthru(). It's default that it does though, so just check if this script is not working.
 ```
-sudo apt install php php-cli php-mbstring php-sqlite3
+sudo apt-get install php php-cli php-mbstring php-sqlite3
+sudo apt-get install php7.0-mcrypt
 ```
 
 
